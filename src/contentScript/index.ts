@@ -8,7 +8,7 @@ chrome.runtime.onMessage.addListener((message: SubmissionType) => {
         `
         <li role="none" id="sharelink" class="colored-tab">
             <a role="tab" aria-selected="false" class="tab-link" onclick="event.preventDefault(); navigator.clipboard.writeText('${message.Link}').then(() => { alert('Link copied to clipboard!!!'); }).catch((error) => { alert('Failed to copy link to clipboard:', error); });">
-                <span class="tab-text">Copy Link</span>
+                <span class="tab-text">Share</span>
             </a>
         </li>
         `,

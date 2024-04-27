@@ -23,7 +23,7 @@ export default defineManifest({
   },
   content_scripts: [
     {
-      matches: ['http://*/*', 'https://*/*'],
+      matches: ['https://www.coursera.org/*'],
       js: ['src/contentScript/index.ts'],
     },
   ],
@@ -34,5 +34,5 @@ export default defineManifest({
       matches: [],
     },
   ],
-  permissions: ['activeTab', 'webRequest'],
+  permissions: ['https://www.coursera.org/*', 'webRequest'],
 })
