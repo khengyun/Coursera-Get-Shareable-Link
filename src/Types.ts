@@ -1,0 +1,3 @@
+interface SubmissionType{
+    Link: string
+}
