@@ -1,8 +1,8 @@
 {
-  "name": "my-crx-app",
-  "displayName": "my-crx-app",
-  "version": "0.0.0",
-  "author": "**",
+  "name": "Coursera-Get-Shareable-Link",
+  "displayName": "Coursera-Get-Shareable-Link",
+  "version": "0.0.1",
+  "author": "khengyun",
   "description": "",
   "type": "module",
   "license": "MIT",
