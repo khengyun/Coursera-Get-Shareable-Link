@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "bun",
+			"script": "build",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "bun: build",
+			"detail": "tsc && bunx --bun vite build"
+		}
+	]
+}
