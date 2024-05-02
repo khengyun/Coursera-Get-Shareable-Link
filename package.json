@@ -1,7 +1,7 @@
 {
-  "name": "Coursera-Get-Shareable-Link",
-  "displayName": "Coursera-Get-Shareable-Link",
-  "version": "0.0.1",
+  "name": "Coursera Get Shareable Link",
+  "displayName": "Coursera Get Shareable Link",
+  "version": "0.0.2",
   "author": "khengyun",
   "description": "",
   "type": "module",
