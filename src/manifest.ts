@@ -2,7 +2,8 @@ import { defineManifest } from '@crxjs/vite-plugin'
 import packageData from '../package.json'
 
 //@ts-ignore
-const isDev = process.env.NODE_ENV == 'development'
+// const isDev = process.env.NODE_ENV == 'development'
+const isDev = process.env.NODE_ENV == ''
 
 export default defineManifest({
   name: `${packageData.displayName || packageData.name}${isDev ? ` ➡️ Dev` : ''}`,
@@ -15,7 +16,7 @@ export default defineManifest({
     48: 'img/logo.png',
     128: 'img/logo.png',
   },
-  host_permissions: ['<all_urls>'],
+  host_permissions: ['https://www.coursera.org/*'],
 
   background: {
     service_worker: 'src/background/index.ts',
