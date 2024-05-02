@@ -2,12 +2,10 @@ chrome.runtime.onMessage.addListener((message: SubmissionType) => {
   if (message.hasOwnProperty('Link')) {
     // Process the data here (e.g., store it or send it elsewhere)
     // console.log('Submission Link:', message.Link);
-
-    const shareLinkTab = document.getElementById('sharelink');
-    if (!shareLinkTab) {
       // console.log('Adding share link tab');
-      // Wait 5s before continuing
       setTimeout(() => {
+        const shareLinkTab = document.getElementById('sharelink');
+        if (!shareLinkTab) {
         document.getElementById('assignmentTabs')?.insertAdjacentHTML(
           'beforeend',
           `
@@ -17,10 +15,7 @@ chrome.runtime.onMessage.addListener((message: SubmissionType) => {
               </a>
           </li>
           `
-        );
+        );}
       }, 1000);
-    } else {
-      shareLinkTab.querySelector('a')?.setAttribute('onclick', `event.preventDefault(); navigator.clipboard.writeText('${message.Link}').then(() => { alert('Link copied to clipboard!!!'); }).catch((error) => { alert('Failed to copy link to clipboard:', error); });`);
     }
-  }
-});
+  });

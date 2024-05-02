@@ -6,19 +6,16 @@ chrome.webRequest.onSendHeaders.addListener(
     const { value: referer = '' } = refererHeader || {};
     const { searchParams } = new URL(url);
     const submissionId = searchParams.get('peerSubmissionId')?.split('~')[2] || '';
-    const refererURL = referer.replace('/submit', '/review')
+    const refererURL = referer.replace(/\/submit$/, '/review')
 
     if (url.includes('onDemandPeer') && submissionId && refererURL) {
       let submissionLink = '';
 
       switch (true) {
-        case !refererURL.includes(submissionId) && refererURL.includes("/review"):
+        case !refererURL.endsWith(submissionId) && refererURL.endsWith("/review"):
           submissionLink = `${refererURL}/${submissionId}`;
           break;
         case !refererURL.includes(submissionId) && !refererURL.includes("/review"):
-          submissionLink = `${refererURL}/review/${submissionId}`;
-          break;
-        case !refererURL.includes("/review"):
           submissionLink = `${refererURL}/review/${submissionId}`;
           break;
       }

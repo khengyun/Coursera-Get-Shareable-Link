@@ -26,6 +26,7 @@ export default defineManifest({
     {
       matches: ['https://www.coursera.org/*'],
       js: ['src/contentScript/index.ts'],
+      run_at: 'document_idle',
     },
   ],
 
